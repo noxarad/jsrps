@@ -1,0 +1,26 @@
+<script>
+	//Make a function that returns a randomized RPS choice.
+	function getComputerChoice(){
+		//Make an empty string variable to store the computer's choice.
+		let comChoice;
+		//Make a variable and generate a random number from 0-2 in it.
+		let random = Math.floor(Math.random() * 3);
+		//If the number is 0 then the string variable is rock.
+		switch(random){
+			case 0:
+				comChoice = "Rock";
+				break;
+		//Otherwise if the value is 1 then the string variable is paper.
+			case 1:
+				comChoice = "Paper";
+				break;
+		//Otherwise then the string variable is scissor.
+			case 2:
+				comChoice = "Scissor";
+				break;
+		}
+		//Return the computer's choice.
+		return comChoice;
+	}
+	console.log(getComputerChoice())
+</script>
