@@ -22,5 +22,25 @@
 		//Return the computer's choice.
 		return comChoice;
 	}
-	console.log(getComputerChoice())
+	//Make a function that prompts and returns the user's attack.
+	function getUserChoice(){
+	//Make a boolean with true value.
+		let loopRule = true;
+	//Make an infinite while loop
+		while(loopRule){
+	//Make a variable to record the user's prompt.
+			let prompt = window.prompt("what say you?");
+	//Assert the prompt equals either ROCK PAPER or SCISSOR.
+			if(prompt.toUpperCase() === "ROCK"
+				|| prompt.toUpperCase() === "PAPER"
+				|| prompt.toUpperCase() === "SCISSOR"){
+	//If the choice is correct break out of the loop.
+				loopRule = false;} else {
+	//otherwise alert the user to their mistake.
+				alert("You have mistyped, please try again.");}
+		}
+	//Return the prompt
+		return prompt;
+	}
+	getUserChoice();
 </script>
