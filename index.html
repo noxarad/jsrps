@@ -1,91 +1,64 @@
 <script>
-	//Make a function that returns a randomized RPS choice.
+	//Generate computer's choice.
 	function getComputerChoice(){
-		//Make an empty string variable to store the computer's choice.
 		let comChoice;
-		//Make a variable and generate a random number from 0-2 in it.
 		let random = Math.floor (Math.random() * 3);
-		//If the number is 0 then the string variable is rock.
 		switch (random){
 			case 0:
 				comChoice = "ROCK";
 				break;
-		//Otherwise if the value is 1 then the string variable is paper.
 			case 1:
 				comChoice = "PAPER";
 				break;
-		//Otherwise then the string variable is scissor.
 			case 2:
 				comChoice = "SCISSOR";
 				break;
 		}
-		//Return the computer's choice.
 		return comChoice;
 	}
-	//Make a function that prompts and returns the user's attack.
+	//Prompt the user
 	function getUserChoice(){
-	//Make a boolean with true value.
 		let loopRule = true;
-	//Make a variable to contain the user's prmpt.
 		let prompt;
-	//Make an infinite while loop
 		while (loopRule){
-	//Make a variable to record the user's prompt.
 			prompt = window.prompt ("what say you?");
-	//Assert the prompt equals either ROCK PAPER or SCISSOR.
 			if (prompt.toUpperCase() === "ROCK"
 				|| prompt.toUpperCase() === "PAPER"
-				|| prompt.toUpperCase() === "SCISSOR"){
-	//If the choice is correct break out of the loop.
-				loopRule = false;}
-	//otherwise alert the user to their mistake.
+				|| prompt.toUpperCase() === "SCISSOR")
+			{loopRule = false;}
 			else { alert ("You have mistyped, please try again."); }
 		}
-	//Return the prompt
 		return prompt;
 	}
-	//Make a function that requires two variables and returns the winner.
-	function assertion(comChoice, userChoice){
-	//If the choices are the same then return Tie.
+	//Assert the winner
+	function assertTheWinner(comChoice, userChoice){
 		if (userChoice.toUpperCase() === comChoice){
 			return "Tie"}
-	//Else check if the user's choice is Rock.
 		else if (userChoice.toUpperCase() === "ROCK"){
-	//Make a switch statement to check the computer's choice.
 			switch (comChoice){
-	//Return "Loss" if its Paper.
 				case "PAPER":
 					return "Loss";
 					break;
-	//Return "Win" if its Scissor.
 				case "SCISSOR":
 					return "Win"
 					break;
 			}
 		}
-	//Else check if the choice is Paper.
 		else if (userChoice.toUpperCase() === "PAPER"){
-	//Make a switch statement to check the computer's choice.
 			switch (comChoice){
-	//Return "Loss" if its Scissor.
 				case "SCISSOR":
 					return "Loss";
 					break;
-	//Return "Win" if its Rock.
 				case "ROCK":
 					return "Win";
 					break;
 			}
 		}
-	//Else the choice is Scissor.
 		else{
-	//Make a switch statement to  check the computer's choice.
 			switch (comChoice){
-	//Return "Loss" if the choice is Rock.
 				case "ROCK":
 					return "Loss";
 					break;
-	//Return "Win" if the choice is Paper.
 				case "PAPER":
 					return "Win";
 					break;
@@ -93,13 +66,9 @@
 		}
 	
 	}
-	//Make a variable to contain the user's choice.
 	let userChoice = getUserChoice();
-	//Make a variable to contain the computer's choice.
 	let comChoice = getComputerChoice();
-	//Make a variable to contain the results.
-	let result = assertion(comChoice, userChoice);
-	//Alert the user's choice and the computer's and the results.
+	let result = assertTheWinner(comChoice, userChoice);
 	alert(`You: ${userChoice.toUpperCase()}, Computer: ${comChoice}
 		It's a ${result}`)
 </script>
