@@ -1,74 +1,22 @@
-<script>
-	//Generate computer's choice.
-	function getComputerChoice(){
-		let comChoice;
-		let random = Math.floor (Math.random() * 3);
-		switch (random){
-			case 0:
-				comChoice = "ROCK";
-				break;
-			case 1:
-				comChoice = "PAPER";
-				break;
-			case 2:
-				comChoice = "SCISSOR";
-				break;
-		}
-		return comChoice;
-	}
-	//Prompt the user
-	function getUserChoice(){
-		let loopRule = true;
-		let prompt;
-		while (loopRule){
-			prompt = window.prompt ("what say you?");
-			if (prompt.toUpperCase() === "ROCK"
-				|| prompt.toUpperCase() === "PAPER"
-				|| prompt.toUpperCase() === "SCISSOR")
-			{loopRule = false;}
-			else { alert ("You have mistyped, please try again."); }
-		}
-		return prompt;
-	}
-	//Assert the winner
-	function assertTheWinner(comChoice, userChoice){
-		if (userChoice.toUpperCase() === comChoice){
-			return "Tie"}
-		else if (userChoice.toUpperCase() === "ROCK"){
-			switch (comChoice){
-				case "PAPER":
-					return "Loss";
-					break;
-				case "SCISSOR":
-					return "Win"
-					break;
-			}
-		}
-		else if (userChoice.toUpperCase() === "PAPER"){
-			switch (comChoice){
-				case "SCISSOR":
-					return "Loss";
-					break;
-				case "ROCK":
-					return "Win";
-					break;
-			}
-		}
-		else{
-			switch (comChoice){
-				case "ROCK":
-					return "Loss";
-					break;
-				case "PAPER":
-					return "Win";
-					break;
-			}
-		}
-	
-	}
-	let userChoice = getUserChoice();
-	let comChoice = getComputerChoice();
-	let result = assertTheWinner(comChoice, userChoice);
-	alert(`You: ${userChoice.toUpperCase()}, Computer: ${comChoice}
-		It's a ${result}`)
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>rock paper scissors</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="header">
+  <img alt="smiling face" src="rps-smiling.svg" id="face" onmousedown="">
+</div>
+<div id="playground">
+</div>
+<div id="options">
+
+</div>
+</body>
+</html>
