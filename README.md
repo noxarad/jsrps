@@ -1,4 +1,4 @@
 # jsrps
-Rock Paper Scissor but played in console, written in JavaScript.
+Rock Paper Scissor made to look like Windows XP minesweeper.
 
-And bad.
+Still bad.
