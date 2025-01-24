@@ -1,4 +1,6 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+body, html{
+    height: 100%;
     background-color: #c0c0c0;
     margin: 20px;
 }
@@ -12,4 +14,46 @@ body {
 }
 img {
     margin: 10px;
+}
+#playground {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    margin: 15px 0;
+    border-top: #808080 4px solid;
+    border-left:  #808080 4px solid;
+    border-right: white 4px solid;
+    border-bottom: white 4px solid;
+}
+#results, #options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#options {
+    justify-content: space-around;
+}
+p {
+    font-family: "Pixelify Sans", serif;
+    font-size: 100px;
+    margin: 0;
+}
+#options > * {
+    border-top: #808080 4px solid;
+    border-left:  #808080 4px solid;
+    border-right: #808080 4px solid;
+    border-bottom: #808080 4px solid;
+    margin: 0 20px 20px;
+}
+div > button {
+    font-family: "Pixelify Sans", serif;
+    font-size: 30px;
+    height: 90px;
+    width: 150px;
+    border-top: white 4px solid;
+    border-left: white 4px solid;
+    border-right: #808080 4px solid;
+    border-bottom: #808080 4px solid;
+    border-radius: 0;
 }
